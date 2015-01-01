@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+}
+
+project.ext.sourceCompatibility = JavaVersion.VERSION_1_8
+project.ext.targetCompatibility = JavaVersion.VERSION_1_8
+
+repositories {
+    jcenter()
+    maven {
+        url "https://oss.sonatype.org/content/repositories/snapshots"
+    }
+}
+
+dependencies {
+    compile(
+            "com.google.dagger:dagger:2.0-SNAPSHOT",
+            "com.google.dagger:dagger-compiler:2.0-SNAPSHOT")
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.2.1'
+}
