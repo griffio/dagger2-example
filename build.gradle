@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'nebula.provided-base' version '2.0.1'
 }
 
 project.ext.sourceCompatibility = JavaVersion.VERSION_1_8
@@ -12,10 +13,30 @@ repositories {
     }
 }
 
+sourceSets {
+    dagger {
+        java {
+            srcDirs = ['src/dagger/java']
+        }
+    }
+}
+
+compileJava {
+    options.compilerArgs = [
+            '-s', sourceSets.dagger.java.srcDirs.iterator().next()
+    ]
+}
+
 dependencies {
     compile(
-            "com.google.dagger:dagger:2.0-SNAPSHOT",
+            "com.google.dagger:dagger:2.0-SNAPSHOT")
+
+    provided(
             "com.google.dagger:dagger-compiler:2.0-SNAPSHOT")
+
+    testCompile(
+            "junit:junit:4.11"
+    )
 }
 
 task wrapper(type: Wrapper) {
