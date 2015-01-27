@@ -8,6 +8,8 @@ dagger2 example
   * Earth
   * Mars
   
+Represented as singletons of type Planet to be injected qualified by a unique name.
+
 Gradle build
 ```
 ./gradlew run
