@@ -1,29 +1,30 @@
 package griffio.planets;
 
+import com.google.common.collect.ComparisonChain;
+import com.google.common.collect.ImmutableSortedSet;
+
 import javax.inject.Inject;
+import javax.inject.Named;
+import java.util.Comparator;
+import java.util.Set;
 
 public class TerrestrialPlanets {
 
-    private final Earth earth;
-    private final Mars mars;
-    private final Venus venus;
+    private Set<Planet> planets;
 
     @Inject
-    public TerrestrialPlanets(Earth earth, Mars mars, Venus venus) {
-        this.earth = earth;
-        this.mars = mars;
-        this.venus = venus;
+    public TerrestrialPlanets(@Named("Earth") Planet earth, @Named("Mars") Planet mars, @Named("Venus") Planet venus) {
+        this.planets = ImmutableSortedSet.orderedBy(new PlanetSorter()).add(earth, mars, venus).build();
     }
 
-    public Earth getEarth() {
-        return earth;
+    public Set<Planet> getPlanets() {
+        return this.planets;
     }
 
-    public Mars getMars() {
-        return mars;
-    }
-
-    public Venus getVenus() {
-        return venus;
+    private static class PlanetSorter implements Comparator<Planet> {
+        @Override
+        public int compare(Planet a, Planet b) {
+            return ComparisonChain.start().compare(a.au(), b.au()).result();
+        }
     }
 }

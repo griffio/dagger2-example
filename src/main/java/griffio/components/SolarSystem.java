@@ -4,9 +4,10 @@ import dagger.Component;
 import griffio.modules.TerrestrialPlanetsModule;
 import griffio.planets.TerrestrialPlanets;
 
-@Component(modules = TerrestrialPlanetsModule.class)
-interface SolarSystem {
+import javax.inject.Singleton;
 
-    TerrestrialPlanets terrestrialPlanets();
-
+@Singleton
+@Component(modules = {TerrestrialPlanetsModule.class})
+public interface SolarSystem {
+    TerrestrialPlanets terrestrial();
 }

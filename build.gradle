@@ -1,44 +1,52 @@
 plugins {
-    id 'java'
-    id 'nebula.provided-base' version '2.0.1'
+  id 'java'
+  id 'application'
+  id 'nebula.provided-base' version '2.0.1'
 }
 
 project.ext.sourceCompatibility = JavaVersion.VERSION_1_8
 project.ext.targetCompatibility = JavaVersion.VERSION_1_8
 
 repositories {
-    jcenter()
-    maven {
-        url "https://oss.sonatype.org/content/repositories/snapshots"
-    }
+  jcenter()
+  maven {
+    url "https://oss.sonatype.org/content/repositories/snapshots"
+  }
 }
 
 sourceSets {
-    dagger {
-        java {
-            srcDirs = ['src/dagger/java']
-        }
+  dagger {
+    java {
+      srcDirs = ['src/dagger/java']
     }
+  }
 }
 
 compileJava {
-    options.compilerArgs = [
-            '-s', sourceSets.dagger.java.srcDirs.iterator().next()
-    ]
+  options.compilerArgs += [
+      '-s', sourceSets.dagger.java.srcDirs.iterator().next()
+  ]
+}
+
+mainClassName = "griffio.MainApplication"
+
+clean {
+  delete fileTree(dir: sourceSets.dagger.java.srcDirs.iterator().next())
 }
 
 dependencies {
-    compile(
-            "com.google.dagger:dagger:2.0-SNAPSHOT")
 
-    provided(
-            "com.google.dagger:dagger-compiler:2.0-SNAPSHOT")
+  compile(
+      "com.google.dagger:dagger:2.0-SNAPSHOT")
 
-    testCompile(
-            "junit:junit:4.11"
-    )
+  provided(
+      "com.google.dagger:dagger-compiler:2.0-SNAPSHOT")
+
+  testCompile(
+      "junit:junit:4.11"
+  )
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.2.1'
+  gradleVersion = '2.2.1'
 }
