@@ -1,7 +1,9 @@
 dagger2-example
 ===============
 
-dagger2 example
+dagger2 with gradle example
+
+Run a simple application
 
 * Terrestrial Planets
   * Venus
