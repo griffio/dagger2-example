@@ -56,3 +56,4 @@ build/
 
 ### OS X ###
 .DS_Store
+src/dagger/java/
