@@ -12,6 +12,8 @@ Run a simple application
   
 Represented as singletons of type Planet to be injected qualified by a unique name.
 
+A module is defined as the list of Terrestrial Planets adjacent to Earth (inb4 Mercury is not included).
+
 * The dagger compiler (com.google.dagger:dagger-compiler) annotation processor is only added to the java compiler task classpath using the configuration "compileDagger".
 
 * Application only runs with (com.google.dagger:dagger, javax.inject and com.google.guava as used in the application)
