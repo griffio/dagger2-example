@@ -10,10 +10,9 @@ dagger2 example
   
 Represented as singletons of type Planet to be injected qualified by a unique name.
 
-* The dagger (com.google.dagger:dagger-compiler) annotation processor is only added to the the java compiler task classpath
-using the configuration defined compileDagger.
+* The dagger compiler (com.google.dagger:dagger-compiler) annotation processor is only added to the java compiler task classpath using the configuration "compileDagger".
 
-* Application only runs (com.google.dagger:dagger, javax.inject and guava as its used in the application)
+* Application only runs with (com.google.dagger:dagger, javax.inject and com.google.guava as used in the application)
 
 * The sourceSet for generated code is under 'src/dagger/java'
 
