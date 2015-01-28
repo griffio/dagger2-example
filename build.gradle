@@ -27,6 +27,7 @@ configurations {
 }
 
 compileJava {
+  sourceSets.dagger.java.srcDirs*.mkdirs()
   classpath += configurations.compileDagger
   options.compilerArgs += [
       '-s', sourceSets.dagger.java.srcDirs.iterator().next()
