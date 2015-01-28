@@ -7,7 +7,7 @@
 .mtj.tmp/
 
 # Package Files #
-*.jar
+#*.jar allow gradle-wrapper.jar
 *.war
 *.ear
 
