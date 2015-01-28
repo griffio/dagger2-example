@@ -16,28 +16,15 @@ Represented as singletons of type Planet to be injected qualified by a unique na
 
 * The sourceSet for generated code is under 'src/dagger/java'
 
-Gradle build
+Execute gradle build
 ```
 ./gradlew run
 ```
 
+
+Main part of build.gradle
+
 ```groovy
-plugins {
-  id 'java'
-  id 'application'
-  id "com.github.johnrengelman.shadow" version "1.2.1"
-}
-
-project.ext.sourceCompatibility = JavaVersion.VERSION_1_8
-project.ext.targetCompatibility = JavaVersion.VERSION_1_8
-
-repositories {
-  jcenter()
-  maven {
-    url "https://oss.sonatype.org/content/repositories/snapshots"
-  }
-}
-
 sourceSets {
   dagger {
     java {
@@ -51,6 +38,7 @@ configurations {
 }
 
 compileJava {
+  sourceSets.dagger.java.srcDirs*.mkdirs()
   classpath += configurations.compileDagger
   options.compilerArgs += [
       '-s', sourceSets.dagger.java.srcDirs.iterator().next()
@@ -76,9 +64,5 @@ dependencies {
       "junit:junit:4.11"
   )
 
-}
-
-task wrapper(type: Wrapper) {
-  gradleVersion = '2.2.1'
 }
 ```
