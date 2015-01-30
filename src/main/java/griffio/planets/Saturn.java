@@ -1,14 +1,14 @@
 package griffio.planets;
 
-public final class Earth implements Planet {
+public final class Saturn implements Planet {
     @Override
     public String names() {
-        return "Earth,Gaia,Terra";
+        return "Saturn, Cronus, Shabbathai, Zuhal";
     }
 
     @Override
     public double au() {
-        return 1.0;
+        return 9.5;
     }
 
     @Override

@@ -1,18 +1,20 @@
 dagger2-example
 ===============
 
-dagger2 with gradle example
+dagger2 example
 
-Run a simple application
-
-* Terrestrial Planets
+* Terrestrial Planets module
   * Venus
   * Earth
   * Mars
-  
-Represented as singletons of type Planet to be injected qualified by a unique name.
 
-A module is defined as the list of Terrestrial Planets adjacent to Earth (inb4 Mercury is not included).
+* Outer Planets module
+  * Jupiter
+  * Saturn
+  * Uranus
+  * Neptune
+
+Represented as singletons of type Planet to be injected qualified by a unique name.
 
 * The dagger compiler (com.google.dagger:dagger-compiler) annotation processor is only added to the java compiler task classpath using the configuration "compileDagger".
 
@@ -20,15 +22,28 @@ A module is defined as the list of Terrestrial Planets adjacent to Earth (inb4 M
 
 * The sourceSet for generated code is under 'src/dagger/java'
 
-Execute gradle build
+Gradle build
 ```
 ./gradlew run
 ```
 
-
-Main part of build.gradle
-
 ```groovy
+plugins {
+  id 'java'
+  id 'application'
+  id "com.github.johnrengelman.shadow" version "1.2.1"
+}
+
+project.ext.sourceCompatibility = JavaVersion.VERSION_1_8
+project.ext.targetCompatibility = JavaVersion.VERSION_1_8
+
+repositories {
+  jcenter()
+  maven {
+    url "https://oss.sonatype.org/content/repositories/snapshots"
+  }
+}
+
 sourceSets {
   dagger {
     java {
@@ -42,7 +57,6 @@ configurations {
 }
 
 compileJava {
-  sourceSets.dagger.java.srcDirs*.mkdirs()
   classpath += configurations.compileDagger
   options.compilerArgs += [
       '-s', sourceSets.dagger.java.srcDirs.iterator().next()
@@ -68,5 +82,9 @@ dependencies {
       "junit:junit:4.11"
   )
 
+}
+
+task wrapper(type: Wrapper) {
+  gradleVersion = '2.2.1'
 }
 ```

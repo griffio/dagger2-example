@@ -11,4 +11,13 @@ public class Mars implements Planet {
         return 1.5;
     }
 
+    @Override
+    public int hashCode() {
+        return Planets.hash(names(), au());
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        return other instanceof Planet && Planets.isEqual(this, (Planet) other);
+    }
 }

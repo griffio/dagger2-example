@@ -1,14 +1,14 @@
 package griffio.planets;
 
-public final class Earth implements Planet {
+public final class Jupiter implements Planet {
     @Override
     public String names() {
-        return "Earth,Gaia,Terra";
+        return "Jupiter, Jove, The Gas Giant";
     }
 
     @Override
     public double au() {
-        return 1.0;
+        return 5.2;
     }
 
     @Override

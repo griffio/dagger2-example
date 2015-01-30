@@ -1,14 +1,14 @@
 package griffio.planets;
 
-public final class Earth implements Planet {
+public final class Uranus implements Planet{
     @Override
     public String names() {
-        return "Earth,Gaia,Terra";
+        return "Uranus, Ouranos, Georgium Sidus";
     }
 
     @Override
     public double au() {
-        return 1.0;
+        return 19.2;
     }
 
     @Override
@@ -20,4 +20,5 @@ public final class Earth implements Planet {
     public boolean equals(Object other) {
         return other instanceof Planet && Planets.isEqual(this, (Planet) other);
     }
+
 }
