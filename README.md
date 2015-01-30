@@ -57,6 +57,8 @@ configurations {
 }
 
 compileJava {
+  description = "dagger annotation processor is loaded automatically from classpath"
+  sourceSets.dagger.java.srcDirs*.mkdirs()
   classpath += configurations.compileDagger
   options.compilerArgs += [
       '-s', sourceSets.dagger.java.srcDirs.iterator().next()
@@ -66,6 +68,7 @@ compileJava {
 mainClassName = "griffio.MainApplication"
 
 clean {
+  description = "delete files in generated source directory tree"
   delete fileTree(dir: sourceSets.dagger.java.srcDirs.iterator().next())
 }
 
