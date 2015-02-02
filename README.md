@@ -1,7 +1,11 @@
 dagger2-example with Gradle build
 =================================
 
-The TerrestrialPlanetsModule for example provides a singleton named "Mercury" etc.
+* @Component
+  * @Module
+    * @Provides
+
+The TerrestrialPlanetsModule, for example, provides a singleton named "Mercury" etc.
 
 ```java
 @Module
@@ -45,7 +49,9 @@ public class TerrestrialPlanetsModule {
   * Uranus
   * Neptune
 
-Represented as singletons of type Planet to be injected qualified by a unique name.
+---
+
+**Gradle build**
 
 * The dagger compiler (com.google.dagger:dagger-compiler) annotation processor is only added to the java compiler task classpath using the configuration "compileDagger".
 
@@ -53,7 +59,6 @@ Represented as singletons of type Planet to be injected qualified by a unique na
 
 * The sourceSet for generated code is under 'src/dagger/java'
 
-Gradle build
 
 ```
 ./gradlew run
