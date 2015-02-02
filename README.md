@@ -1,12 +1,43 @@
-dagger2-example
-===============
+dagger2-example with Gradle build
+=================================
 
-dagger2 example
+The TerrestrialPlanetsModule for example provides a singleton named "Mercury" etc.
 
-* Terrestrial Planets module
-  * Venus
-  * Earth
-  * Mars
+```java
+@Module
+public class TerrestrialPlanetsModule {
+
+    @Provides
+    @Singleton
+    @Named("Mercury")
+    Planet first() {
+        return new Mercury();
+    }
+
+    @Provides
+    @Singleton
+    @Named("Venus")
+    Planet second() {
+        return new Venus();
+    }
+
+    @Provides
+    @Singleton
+    @Named("Earth")
+    Planet third() {
+        return new Earth();
+    }
+
+    @Provides
+    @Singleton
+    @Named("Mars")
+    Planet forth() {
+        return new Mars();
+    }
+
+}
+
+```
 
 * Outer Planets module
   * Jupiter
@@ -23,6 +54,7 @@ Represented as singletons of type Planet to be injected qualified by a unique na
 * The sourceSet for generated code is under 'src/dagger/java'
 
 Gradle build
+
 ```
 ./gradlew run
 ```
