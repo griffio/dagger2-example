@@ -1,7 +1,6 @@
 package griffio.components;
 
 import com.google.common.truth.Truth;
-import griffio.modules.TerrestrialPlanetsModule;
 import griffio.planets.Earth;
 import griffio.planets.Jupiter;
 import griffio.planets.Mars;

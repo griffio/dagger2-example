@@ -38,7 +38,7 @@ public class TerrestrialPlanetsModule {
     @Provides
     @Singleton
     @Named("Mars")
-    Planet forth() {
+    Planet fourth() {
         return new Mars();
     }
 
