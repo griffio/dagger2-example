@@ -119,12 +119,13 @@ dependencies {
       "com.google.dagger:dagger-compiler:2.0-SNAPSHOT")
 
   testCompile(
-      "junit:junit:4.11"
+      "junit:junit:4.12",
+      "com.google.truth:truth:1.0-SNAPSHOT"
   )
 
 }
 
 task wrapper(type: Wrapper) {
-  gradleVersion = '2.2.1'
+  gradleVersion = '2.3'
 }
 ```
