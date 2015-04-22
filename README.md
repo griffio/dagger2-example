@@ -1,6 +1,12 @@
 dagger2-example with Gradle build
 =================================
 
+[Dagger2 site ](http://google.github.io/dagger/)
+
+Since 2.0 release:- Dagger generates components prefixed with just "Dagger" instead of "_"
+
+---
+
 * @Component
   * @Module
     * @Provides
@@ -112,11 +118,11 @@ clean {
 dependencies {
 
   compile(
-      "com.google.dagger:dagger:2.0-SNAPSHOT",
+      "com.google.dagger:dagger:2.0",
       "com.google.guava:guava:18.0")
 
   compileDagger(
-      "com.google.dagger:dagger-compiler:2.0-SNAPSHOT")
+      "com.google.dagger:dagger-compiler:2.0")
 
   testCompile(
       "junit:junit:4.12",

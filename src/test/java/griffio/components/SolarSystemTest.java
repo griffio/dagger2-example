@@ -19,7 +19,7 @@ public class SolarSystemTest {
 
     @Before
     public void setUp() throws Exception {
-        solarSystem = Dagger_SolarSystem.builder().build();
+        solarSystem = DaggerSolarSystem.builder().build();
     }
 
     @Test
