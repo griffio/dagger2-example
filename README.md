@@ -5,6 +5,10 @@ dagger2-example with Gradle build
 
 Since 2.0 release:- Dagger generates components prefixed with just "Dagger" instead of "_"
 
+[Truth Assert](http://google.github.io/truth/)
+
+Currently uses Truth.assertThat(...)
+
 ---
 
 * @Component

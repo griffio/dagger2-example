@@ -25,12 +25,12 @@ public class SolarSystemTest {
     @Test
     public void terrestrial() throws Exception {
         TerrestrialPlanets terrestrialPlanets = solarSystem.terrestrial();
-        Truth.ASSERT.that(terrestrialPlanets).containsExactly(new Venus(), new Earth(), new Mars()).inOrder();
+        Truth.assertThat(terrestrialPlanets).containsExactly(new Venus(), new Earth(), new Mars()).inOrder();
     }
 
     @Test
     public void outer() throws Exception {
         OuterPlanets outerPlanets = solarSystem.outer();
-        Truth.ASSERT.that(outerPlanets).containsExactly(new Jupiter(), new Saturn(), new Uranus(), new Neptune()).inOrder();
+        Truth.assertThat(outerPlanets).containsExactly(new Jupiter(), new Saturn(), new Uranus(), new Neptune()).inOrder();
     }
 }
