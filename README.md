@@ -63,12 +63,9 @@ public class TerrestrialPlanetsModule {
 
 **Gradle build**
 
-* The dagger compiler (com.google.dagger:dagger-compiler) annotation processor is only added to the java compiler task classpath using the configuration "compileDagger".
+* Uses Gradle plugin [com.ewerk.gradle.plugins.dagger] (https://github.com/ewerk/gradle-plugins/tree/master/dagger-plugin)
 
-* Application only runs with (com.google.dagger:dagger, javax.inject and com.google.guava as used in the application)
-
-* The sourceSet for generated code is under 'src/dagger/java'
-
+* Dagger destination directory default "src/dagger/java"
 
 ```
 ./gradlew run
@@ -79,6 +76,7 @@ plugins {
   id 'java'
   id 'application'
   id "com.github.johnrengelman.shadow" version "1.2.1"
+  id "com.ewerk.gradle.plugins.dagger" version "1.0.0"
 }
 
 project.ext.sourceCompatibility = JavaVersion.VERSION_1_8
@@ -91,42 +89,12 @@ repositories {
   }
 }
 
-sourceSets {
-  dagger {
-    java {
-      srcDirs = ['src/dagger/java']
-    }
-  }
-}
-
-configurations {
-  compileDagger
-}
-
-compileJava {
-  description = "dagger annotation processor is loaded automatically from classpath"
-  sourceSets.dagger.java.srcDirs*.mkdirs()
-  classpath += configurations.compileDagger
-  options.compilerArgs += [
-      '-s', sourceSets.dagger.java.srcDirs.iterator().next()
-  ]
-}
-
 mainClassName = "griffio.MainApplication"
-
-clean {
-  description = "delete files in generated source directory tree"
-  delete fileTree(dir: sourceSets.dagger.java.srcDirs.iterator().next())
-}
 
 dependencies {
 
   compile(
-      "com.google.dagger:dagger:2.0",
       "com.google.guava:guava:18.0")
-
-  compileDagger(
-      "com.google.dagger:dagger-compiler:2.0")
 
   testCompile(
       "junit:junit:4.12",
