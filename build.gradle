@@ -9,9 +9,6 @@ project.ext.targetCompatibility = JavaVersion.VERSION_1_8
 
 repositories {
   jcenter()
-  maven {
-    url "https://oss.sonatype.org/content/repositories/snapshots"
-  }
 }
 
 sourceSets {
@@ -44,7 +41,7 @@ clean {
 
 dependencies {
 
-  ext.daggerVersion = "2.1-SNAPSHOT"
+  ext.daggerVersion = "2.0.1"
 
   compile(
       "com.google.dagger:dagger:${daggerVersion}",
@@ -55,7 +52,7 @@ dependencies {
 
   testCompile(
       "junit:junit:4.12",
-      "com.google.truth:truth:1.0-SNAPSHOT"
+      "com.google.truth:truth:0.27"
   )
 
 }
@@ -63,4 +60,3 @@ dependencies {
 task wrapper(type: Wrapper) {
   gradleVersion = '2.4'
 }
-
