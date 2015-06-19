@@ -3,6 +3,8 @@ dagger2-example with Gradle build
 
 [Dagger2 site ](http://google.github.io/dagger/)
 
+[See branch for ewerk plugin version](https://github.com/griffio/dagger2-example/tree/plugin)
+
 Since 2.0 release:- Dagger generates components prefixed with just "Dagger" instead of "_"
 
 [Truth Assert](http://google.github.io/truth/)
@@ -86,9 +88,6 @@ project.ext.targetCompatibility = JavaVersion.VERSION_1_8
 
 repositories {
   jcenter()
-  maven {
-    url "https://oss.sonatype.org/content/repositories/snapshots"
-  }
 }
 
 sourceSets {
@@ -122,15 +121,15 @@ clean {
 dependencies {
 
   compile(
-      "com.google.dagger:dagger:2.0",
+      "com.google.dagger:dagger:2.0.1",
       "com.google.guava:guava:18.0")
 
   compileDagger(
-      "com.google.dagger:dagger-compiler:2.0")
+      "com.google.dagger:dagger-compiler:2.0.1")
 
   testCompile(
       "junit:junit:4.12",
-      "com.google.truth:truth:1.0-SNAPSHOT"
+      "com.google.truth:truth:0.23"
   )
 
 }
