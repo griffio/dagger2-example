@@ -67,6 +67,7 @@ public class TerrestrialPlanetsModule {
   * Haumea
   * MakeMake
   * Eris
+  
 ---
 
 **Gradle build**
