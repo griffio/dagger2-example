@@ -1,14 +1,14 @@
 package griffio.planets;
 
-public final class Mars implements Planet {
+public final class Haumea implements DwarfPlanet {
     @Override
     public String names() {
-        return "Mars,Red Planet";
+        return "Haumea";
     }
 
     @Override
     public double au() {
-        return 1.5;
+        return 43.13;
     }
 
     @Override
@@ -18,6 +18,6 @@ public final class Mars implements Planet {
 
     @Override
     public boolean equals(Object other) {
-        return other instanceof Planet && Planets.isEqual(this, (Planet) other);
+        return other instanceof DwarfPlanet && Planets.isEqual(this, (DwarfPlanet) other);
     }
 }
