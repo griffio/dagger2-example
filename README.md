@@ -61,6 +61,12 @@ public class TerrestrialPlanetsModule {
   * Uranus
   * Neptune
 
+* Dwarf Planets module
+  * Ceres
+  * Pluto
+  * Haumea
+  * MakeMake
+  * Eris
 ---
 
 **Gradle build**
