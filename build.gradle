@@ -41,7 +41,7 @@ clean {
 
 dependencies {
 
-  ext.daggerVersion = "2.0.1"
+  ext.daggerVersion = "2.0.2"
 
   compile(
       "com.google.dagger:dagger:${daggerVersion}",
@@ -58,5 +58,5 @@ dependencies {
 }
 
 task wrapper(type: Wrapper) {
-  gradleVersion = '2.4'
+  gradleVersion = '2.5'
 }
