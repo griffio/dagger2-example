@@ -41,11 +41,11 @@ clean {
 
 dependencies {
 
-  ext.daggerVersion = "2.2"
+  ext.daggerVersion = "2.4"
 
   compile(
       "com.google.dagger:dagger:${daggerVersion}",
-      "com.google.guava:guava:18.0")
+      "com.google.guava:guava:19.0")
 
   compileDagger(
       "com.google.dagger:dagger-compiler:${daggerVersion}")
