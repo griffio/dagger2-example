@@ -41,7 +41,7 @@ clean {
 
 dependencies {
 
-  ext.daggerVersion = "2.4"
+  ext.daggerVersion = "2.5"
 
   compile(
       "com.google.dagger:dagger:${daggerVersion}",
@@ -52,7 +52,7 @@ dependencies {
 
   testCompile(
       "junit:junit:4.12",
-      "com.google.truth:truth:0.27"
+      "com.google.truth:truth:0.28"
   )
 
 }
