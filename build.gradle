@@ -41,7 +41,7 @@ clean {
 
 dependencies {
 
-  ext.daggerVersion = "2.6"
+  ext.daggerVersion = "2.6.1"
 
   compile(
       "com.google.dagger:dagger:${daggerVersion}",
