@@ -87,7 +87,7 @@ public class TerrestrialPlanetsModule {
 plugins {
   id 'java'
   id 'application'
-  id "com.github.johnrengelman.shadow" version "1.2.1"
+  id "com.github.johnrengelman.shadow" version "1.2.3"
 }
 
 project.ext.sourceCompatibility = JavaVersion.VERSION_1_8
