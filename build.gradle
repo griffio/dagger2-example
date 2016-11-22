@@ -41,22 +41,21 @@ clean {
 
 dependencies {
 
-  ext.daggerVersion = "2.7"
+  ext.daggerVersion = "2.8"
 
   compile(
       "com.google.dagger:dagger:${daggerVersion}",
-      "com.google.guava:guava:19.0")
+      "com.google.guava:guava:20.0")
 
   compileDagger(
       "com.google.dagger:dagger-compiler:${daggerVersion}")
 
   testCompile(
       "junit:junit:4.12",
-      "com.google.truth:truth:0.28"
+      "com.google.truth:truth:0.30"
   )
-
 }
 
 task wrapper(type: Wrapper) {
-  gradleVersion = '2.14.1'
+  gradleVersion = '2.3.1'
 }

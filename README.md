@@ -128,20 +128,20 @@ clean {
 dependencies {
 
   compile(
-      "com.google.dagger:dagger:2.6",
-      "com.google.guava:guava:19.0")
+      "com.google.dagger:dagger:2.8",
+      "com.google.guava:guava:20.0")
 
   compileDagger(
-      "com.google.dagger:dagger-compiler:2.6")
+      "com.google.dagger:dagger-compiler:2.8")
 
   testCompile(
       "junit:junit:4.12",
-      "com.google.truth:truth:0.28"
+      "com.google.truth:truth:0.30"
   )
 
 }
 
 task wrapper(type: Wrapper) {
-  gradleVersion = '2.14.1'
+  gradleVersion = '2.3.1'
 }
 ```
