@@ -128,11 +128,11 @@ clean {
 dependencies {
 
   compile(
-      "com.google.dagger:dagger:2.8",
+      "com.google.dagger:dagger:2.10",
       "com.google.guava:guava:20.0")
 
   compileDagger(
-      "com.google.dagger:dagger-compiler:2.8")
+      "com.google.dagger:dagger-compiler:2.10")
 
   testCompile(
       "junit:junit:4.12",
