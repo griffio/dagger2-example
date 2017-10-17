@@ -128,7 +128,7 @@ clean {
 dependencies {
 
   compile(
-      "com.google.dagger:dagger:2.11",
+      "com.google.dagger:dagger:2.12",
       "com.google.guava:guava:20.0")
 
   compileDagger(
